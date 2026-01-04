@@ -62,17 +62,27 @@ kubectl patch pod <pod-name> -p '{"metadata":{"finalizers":[]}}' --type=merge
 ---
 
 ### 🔹 Scenario #3: Node Not Rejoining After Reboot
-**Category:** Cluster Management  
-**Environment:** K8s v1.21, Self-managed cluster  
+**Category:** Cluster Management
+**Environment:** K8s v1.21, Self-managed cluster, Static nodes
 
-**Summary:** A node failed to rejoin the cluster after a reboot due to a kubelet identity mismatch.
+**Summary:** A rebooted node failed to rejoin the cluster due to kubelet identity mismatch.
+**What Happened:** 
+- After a kernel upgrade and reboot, a node didn’t appear in kubectl get nodes. The kubelet logs showed registration issues.
 
-**What Happened:**  
-- The node was rebooted after a kernel upgrade.  
-- After reboot, the node did **not appear** in `kubectl get nodes`.  
-- Kubelet kept failing to register with the control plane.
+**Diagnosis Steps:**
+- Checked system logs and kubelet logs.
+- Noticed --hostname-override didn't match the node name registered earlier.
+- kubectl get nodes -o wide showed old hostname; new one mismatched due to DHCP/hostname change.
 
-**Diagnosis Steps:**  
-- Checked system and kubelet logs using:
-  ```bash
-  journalctl -u kubelet
+**Root Cause:** Kubelet registered with a hostname that no longer matched its node identity in the cluster.
+
+**Fix / Workaround:**
+- Re-joined the node using correct --hostname-override.
+- Cleaned up stale node entry from the cluster.
+
+**Lessons Learned:**
+- Node identity must remain consistent across reboots.
+
+**How to Avoid:**
+- Set static hostnames and IPs.
+- Use consistent cloud-init or kubeadm configuration.
