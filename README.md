@@ -58,3 +58,21 @@ kubectl patch pod <pod-name> -p '{"metadata":{"finalizers":[]}}' --type=merge
 - Add **Prometheus alerts** for unusually high CR counts.  
 
 **Pro Tip:** Consider implementing **rate limiting** or **circuit breakers** in controllers to prevent uncontrolled resource creation.
+
+---
+
+### 🔹 Scenario #3: Node Not Rejoining After Reboot
+**Category:** Cluster Management  
+**Environment:** K8s v1.21, Self-managed cluster  
+
+**Summary:** A node failed to rejoin the cluster after a reboot due to a kubelet identity mismatch.
+
+**What Happened:**  
+- The node was rebooted after a kernel upgrade.  
+- After reboot, the node did **not appear** in `kubectl get nodes`.  
+- Kubelet kept failing to register with the control plane.
+
+**Diagnosis Steps:**  
+- Checked system and kubelet logs using:
+  ```bash
+  journalctl -u kubelet
