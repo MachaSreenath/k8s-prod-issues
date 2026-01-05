@@ -96,3 +96,8 @@ kubectl patch pod <pod-name> -p '{"metadata":{"finalizers":[]}}' --type=merge
 **Summary:** etcd ran out of disk space, making API server unresponsive.
 **What Happened:**
 - The cluster started failing API requests. Etcd logs showed disk space errors, and API server logs showed failed storage operations.
+
+**Diagnosis Steps:**
+- Used df -h on etcd nodes — confirmed disk full.
+- Reviewed /var/lib/etcd – excessive WAL and snapshot files.
+- Used etcdctl to assess DB size.
