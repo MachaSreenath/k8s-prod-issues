@@ -101,3 +101,5 @@ kubectl patch pod <pod-name> -p '{"metadata":{"finalizers":[]}}' --type=merge
 - Used df -h on etcd nodes — confirmed disk full.
 - Reviewed /var/lib/etcd – excessive WAL and snapshot files.
 - Used etcdctl to assess DB size.
+
+**Root Cause:** Lack of compaction and snapshotting caused disk to fill up with historical revisions and WALs.
