@@ -92,3 +92,7 @@ kubectl patch pod <pod-name> -p '{"metadata":{"finalizers":[]}}' --type=merge
 ### 🔹 Scenario #4: Etcd Disk Full Causing API Server Timeout
 **Category:** Cluster Management
 **Environment:** K8s v1.25, Bare-metal cluster
+
+**Summary:** etcd ran out of disk space, making API server unresponsive.
+**What Happened:**
+- The cluster started failing API requests. Etcd logs showed disk space errors, and API server logs showed failed storage operations.
