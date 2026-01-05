@@ -110,3 +110,10 @@ kubectl patch pod <pod-name> -p '{"metadata":{"finalizers":[]}}' --type=merge
 - etcdctl compact <rev>
 - etcdctl defrag
   - Cleaned logs, snapshots, and increased disk space temporarily.
+
+**Lessons Learned:**
+- etcd requires periodic maintenance.
+
+**How to Avoid:**
+- Enable automatic compaction.
+- Monitor disk space usage of etcd volumes.
