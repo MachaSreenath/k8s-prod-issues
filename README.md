@@ -86,3 +86,9 @@ kubectl patch pod <pod-name> -p '{"metadata":{"finalizers":[]}}' --type=merge
 **How to Avoid:**
 - Set static hostnames and IPs.
 - Use consistent cloud-init or kubeadm configuration.
+
+---
+
+### 🔹 Scenario #4: Etcd Disk Full Causing API Server Timeout
+**Category:** Cluster Management
+**Environment:** K8s v1.25, Bare-metal cluster
