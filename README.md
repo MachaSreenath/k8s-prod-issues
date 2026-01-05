@@ -103,3 +103,10 @@ kubectl patch pod <pod-name> -p '{"metadata":{"finalizers":[]}}' --type=merge
 - Used etcdctl to assess DB size.
 
 **Root Cause:** Lack of compaction and snapshotting caused disk to fill up with historical revisions and WALs.
+
+**Fix/Workaround:**
+- bash
+- CopyEdit
+- etcdctl compact <rev>
+- etcdctl defrag
+  - Cleaned logs, snapshots, and increased disk space temporarily.
