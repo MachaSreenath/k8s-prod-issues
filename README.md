@@ -134,3 +134,7 @@ A user added taints (NoSchedule) to all nodes to isolate their app, but forgot t
 - Inspected node taints via kubectl describe node.
 
 **Root Cause:** Lack of required tolerations on most workloads.
+
+**Fix/Workaround:**
+- Removed the inappropriate taints.
+- Re-scheduled workloads.
