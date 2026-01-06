@@ -138,3 +138,10 @@ A user added taints (NoSchedule) to all nodes to isolate their app, but forgot t
 **Fix/Workaround:**
 - Removed the inappropriate taints.
 - Re-scheduled workloads.
+
+**Lessons Learned:**
+- Node taints must be reviewed cluster-wide.
+
+**How to Avoid:**
+- Educate teams on node taints and tolerations.
+- Restrict RBAC for node mutation.
