@@ -117,3 +117,18 @@ kubectl patch pod <pod-name> -p '{"metadata":{"finalizers":[]}}' --type=merge
 **How to Avoid:**
 - Enable automatic compaction.
 - Monitor disk space usage of etcd volumes.
+
+---
+
+### 🔹 Scenario #5: Misconfigured Taints Blocking Pod Scheduling
+**Category:** Cluster Management
+**Environment:** K8s v1.26, Multi-tenant cluster
+
+**Summary:** Critical workloads weren’t getting scheduled due to incorrect node taints.
+**What Happened:**
+A user added taints (NoSchedule) to all nodes to isolate their app, but forgot to include tolerations in workloads. Other apps stopped working.
+
+**Diagnosis Steps:**
+	• Pods stuck in Pending state.
+	• Used kubectl describe pod <pod> – reason: no nodes match tolerations.
+	• Inspected node taints via kubectl describe node.
