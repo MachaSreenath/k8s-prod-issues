@@ -129,6 +129,6 @@ kubectl patch pod <pod-name> -p '{"metadata":{"finalizers":[]}}' --type=merge
 A user added taints (NoSchedule) to all nodes to isolate their app, but forgot to include tolerations in workloads. Other apps stopped working.
 
 **Diagnosis Steps:**
-	• Pods stuck in Pending state.
-	• Used kubectl describe pod <pod> – reason: no nodes match tolerations.
-	• Inspected node taints via kubectl describe node.
+- Pods stuck in Pending state.
+- Used kubectl describe pod <pod> – reason: no nodes match tolerations.
+- Inspected node taints via kubectl describe node.
