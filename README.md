@@ -8,7 +8,8 @@ This repo documents **real-world Kubernetes production problems** and how they w
 ---
 
 ### 🔹 Scenario #1: Zombie Pods Blocking Node Drain
-**Category:** Cluster Management  
+**Category:** Cluster Management
+
 **Environment:** K8s v1.23, On-prem bare metal, Systemd cgroups  
 
 **Summary:** Node drain stuck indefinitely due to unresponsive pod with a finalizer.  
