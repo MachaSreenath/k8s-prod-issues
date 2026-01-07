@@ -162,3 +162,7 @@ A new container image with many layers was deployed. Node’s disk filled up, tr
 - Node /var/lib/containerd usage exceeded threshold.
 
 **Root Cause:** Excessive layering in container image and high pull churn caused disk exhaustion.
+
+**Fix/Workaround:**
+- Rebuilt image using multistage builds and removed unused layers.
+- Increased ephemeral disk space temporarily.
