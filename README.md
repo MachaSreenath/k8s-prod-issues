@@ -31,7 +31,8 @@ kubectl patch pod <pod-name> -p '{"metadata":{"finalizers":[]}}' --type=merge
 ---
 
 ### 🔹 Scenario #2: API Server Crash Due to Excessive CRD Writes
-**Category:** Cluster Management  
+**Category:** Cluster Management
+
 **Environment:** K8s v1.24, GKE  
 
 **Summary:** API server crashed because a malfunctioning controller flooded the cluster with custom resources.  
