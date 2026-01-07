@@ -169,3 +169,7 @@ kubectl patch pod <pod-name> -p '{"metadata":{"finalizers":[]}}' --type=merge
 
 **Lessons Learned:**
 - Container image size directly affects node stability.
+
+**How to Avoid:**
+- Set resource requests/limits appropriately.
+- Use image scanning to reject bloated images.
