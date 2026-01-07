@@ -145,3 +145,11 @@ A user added taints (NoSchedule) to all nodes to isolate their app, but forgot t
 **How to Avoid:**
 - Educate teams on node taints and tolerations.
 - Restrict RBAC for node mutation.
+
+---
+
+### 🔹 Scenario #6: Kubelet DiskPressure Loop on Large Image Pulls
+**Category:** Cluster Management
+**Environment:** K8s v1.22, EKS
+
+**Summary:** Continuous pod evictions caused by DiskPressure due to image bloating.
