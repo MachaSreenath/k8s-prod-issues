@@ -160,3 +160,5 @@ A new container image with many layers was deployed. Node’s disk filled up, tr
 - Checked node conditions: kubectl describe node showed DiskPressure: True.
 - Monitored image cache with crictl images.
 - Node /var/lib/containerd usage exceeded threshold.
+
+**Root Cause:** Excessive layering in container image and high pull churn caused disk exhaustion.
