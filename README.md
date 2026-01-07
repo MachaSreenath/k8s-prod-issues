@@ -153,3 +153,10 @@ A user added taints (NoSchedule) to all nodes to isolate their app, but forgot t
 **Environment:** K8s v1.22, EKS
 
 **Summary:** Continuous pod evictions caused by DiskPressure due to image bloating.
+**What Happened:**
+A new container image with many layers was deployed. Node’s disk filled up, triggering kubelet’s DiskPressure condition. Evicted pods created a loop.
+
+**Diagnosis Steps:**
+- Checked node conditions: kubectl describe node showed DiskPressure: True.
+- Monitored image cache with crictl images.
+- Node /var/lib/containerd usage exceeded threshold.
