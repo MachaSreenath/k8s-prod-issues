@@ -63,9 +63,11 @@ kubectl patch pod <pod-name> -p '{"metadata":{"finalizers":[]}}' --type=merge
 
 ### 🔹 Scenario #3: Node Not Rejoining After Reboot
 **Category:** Cluster Management
+
 **Environment:** K8s v1.21, Self-managed cluster, Static nodes
 
 **Summary:** A rebooted node failed to rejoin the cluster due to kubelet identity mismatch.
+
 **What Happened:** 
 - After a kernel upgrade and reboot, a node didn’t appear in kubectl get nodes. The kubelet logs showed registration issues.
 
@@ -91,6 +93,7 @@ kubectl patch pod <pod-name> -p '{"metadata":{"finalizers":[]}}' --type=merge
 
 ### 🔹 Scenario #4: Etcd Disk Full Causing API Server Timeout
 **Category:** Cluster Management
+
 **Environment:** K8s v1.25, Bare-metal cluster
 
 **Summary:** etcd ran out of disk space, making API server unresponsive.
@@ -122,9 +125,11 @@ kubectl patch pod <pod-name> -p '{"metadata":{"finalizers":[]}}' --type=merge
 
 ### 🔹 Scenario #5: Misconfigured Taints Blocking Pod Scheduling
 **Category:** Cluster Management
+
 **Environment:** K8s v1.26, Multi-tenant cluster
 
 **Summary:** Critical workloads weren’t getting scheduled due to incorrect node taints.
+
 **What Happened:**
 - A user added taints (NoSchedule) to all nodes to isolate their app, but forgot to include tolerations in workloads. Other apps stopped working.
 
@@ -150,9 +155,11 @@ kubectl patch pod <pod-name> -p '{"metadata":{"finalizers":[]}}' --type=merge
 
 ### 🔹 Scenario #6: Kubelet DiskPressure Loop on Large Image Pulls
 **Category:** Cluster Management
+
 **Environment:** K8s v1.22, EKS
 
 **Summary:** Continuous pod evictions caused by DiskPressure due to image bloating.
+
 **What Happened:**
 - A new container image with many layers was deployed. Node’s disk filled up, triggering kubelet’s DiskPressure condition. Evicted pods created a loop.
 
