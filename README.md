@@ -126,7 +126,7 @@ kubectl patch pod <pod-name> -p '{"metadata":{"finalizers":[]}}' --type=merge
 
 **Summary:** Critical workloads weren’t getting scheduled due to incorrect node taints.
 **What Happened:**
-A user added taints (NoSchedule) to all nodes to isolate their app, but forgot to include tolerations in workloads. Other apps stopped working.
+- A user added taints (NoSchedule) to all nodes to isolate their app, but forgot to include tolerations in workloads. Other apps stopped working.
 
 **Diagnosis Steps:**
 - Pods stuck in Pending state.
@@ -154,7 +154,7 @@ A user added taints (NoSchedule) to all nodes to isolate their app, but forgot t
 
 **Summary:** Continuous pod evictions caused by DiskPressure due to image bloating.
 **What Happened:**
-A new container image with many layers was deployed. Node’s disk filled up, triggering kubelet’s DiskPressure condition. Evicted pods created a loop.
+- A new container image with many layers was deployed. Node’s disk filled up, triggering kubelet’s DiskPressure condition. Evicted pods created a loop.
 
 **Diagnosis Steps:**
 - Checked node conditions: kubectl describe node showed DiskPressure: True.
@@ -166,3 +166,6 @@ A new container image with many layers was deployed. Node’s disk filled up, tr
 **Fix/Workaround:**
 - Rebuilt image using multistage builds and removed unused layers.
 - Increased ephemeral disk space temporarily.
+
+**Lessons Learned:**
+- Container image size directly affects node stability.
