@@ -202,3 +202,7 @@ kubectl patch pod <pod-name> -p '{"metadata":{"finalizers":[]}}' --type=merge
 
 **Root Cause:** 
 - Large clock skew between node and control plane led to invalid TLS sessions.
+
+**Fix/Workaround:**
+- Restarted NTP sync.
+- Restarted kubelet after sync.
