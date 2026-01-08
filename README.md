@@ -209,3 +209,7 @@ kubectl patch pod <pod-name> -p '{"metadata":{"finalizers":[]}}' --type=merge
 
 **Lessons Learned:** 
 - Clock sync is critical in TLS-based distributed systems.
+
+**How to Avoid:**
+- Use chronyd or systemd-timesyncd.
+- Monitor clock skew across nodes.
