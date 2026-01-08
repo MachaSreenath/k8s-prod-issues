@@ -189,3 +189,13 @@ kubectl patch pod <pod-name> -p '{"metadata":{"finalizers":[]}}' --type=merge
 **Category:** Cluster Management
 
 **Environment:** K8s v1.20, On-prem
+
+**Summary:** One node dropped from the cluster due to TLS errors from time skew.
+
+**What Happened:** 
+- TLS handshakes between the API server and a node started failing. Node became NotReady. Investigation showed NTP daemon was down.
+
+**Diagnosis Steps:**
+- Checked logs for TLS errors: “certificate expired or not yet valid”.
+- Used timedatectl to check drift – node was 45s behind.
+- NTP service was inactive.
