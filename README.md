@@ -199,3 +199,6 @@ kubectl patch pod <pod-name> -p '{"metadata":{"finalizers":[]}}' --type=merge
 - Checked logs for TLS errors: “certificate expired or not yet valid”.
 - Used timedatectl to check drift – node was 45s behind.
 - NTP service was inactive.
+
+**Root Cause:** 
+- Large clock skew between node and control plane led to invalid TLS sessions.
