@@ -206,3 +206,6 @@ kubectl patch pod <pod-name> -p '{"metadata":{"finalizers":[]}}' --type=merge
 **Fix/Workaround:**
 - Restarted NTP sync.
 - Restarted kubelet after sync.
+
+**Lessons Learned:** 
+- Clock sync is critical in TLS-based distributed systems.
