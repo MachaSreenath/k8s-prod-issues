@@ -182,3 +182,10 @@ kubectl patch pod <pod-name> -p '{"metadata":{"finalizers":[]}}' --type=merge
 **How to Avoid:**
 - Set resource requests/limits appropriately.
 - Use image scanning to reject bloated images.
+
+---
+
+### 🔹 Scenario #7: Node Goes NotReady Due to Clock Skew
+**Category:** Cluster Management
+
+**Environment:** K8s v1.20, On-prem
