@@ -236,3 +236,9 @@ kubectl patch pod <pod-name> -p '{"metadata":{"finalizers":[]}}' --type=merge
 **Fix/Workaround:**
 - Patched controller to rate-limit record.Eventf.
 - Cleaned old events.
+
+**Lessons Learned:** Events are not free – they impact etcd/API server.
+
+**How to Avoid:**
+- Use deduplicated or summarized event logic.
+- Set API server --event-ttl=1h and --eventRateLimit.
