@@ -232,3 +232,7 @@ kubectl patch pod <pod-name> -p '{"metadata":{"finalizers":[]}}' --type=merge
 - Found misbehaving controller repeating failure events.
 
 **Root Cause:** No rate limiting on event creation in controller logic.
+
+**Fix/Workaround:**
+- Patched controller to rate-limit record.Eventf.
+- Cleaned old events.
