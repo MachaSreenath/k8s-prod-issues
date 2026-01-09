@@ -217,4 +217,8 @@ kubectl patch pod <pod-name> -p '{"metadata":{"finalizers":[]}}' --type=merge
 
 ---
 
-### 🔹 Scenario #7: API Server High Latency Due to Event Flooding
+### 🔹 Scenario #8: API Server High Latency Due to Event Flooding
+**Category:** Cluster Management
+
+**Environment:** K8s v1.23, Azure AKS
+
