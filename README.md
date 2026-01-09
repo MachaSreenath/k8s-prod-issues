@@ -224,3 +224,9 @@ kubectl patch pod <pod-name> -p '{"metadata":{"finalizers":[]}}' --type=merge
 
 **Summary:** An app spamming Kubernetes events slowed down the entire API server.
 
+**What Happened:** A custom controller logged frequent events (~50/second), causing the etcd event store to choke.
+
+**Diagnosis Steps:**
+- Prometheus showed spike in event count.
+- kubectl get events --sort-by=.metadata.creationTimestamp showed massive spam.
+- Found misbehaving controller repeating failure events.
