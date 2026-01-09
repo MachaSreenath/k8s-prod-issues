@@ -222,3 +222,5 @@ kubectl patch pod <pod-name> -p '{"metadata":{"finalizers":[]}}' --type=merge
 
 **Environment:** K8s v1.23, Azure AKS
 
+**Summary:** An app spamming Kubernetes events slowed down the entire API server.
+
