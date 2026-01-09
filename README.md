@@ -230,3 +230,5 @@ kubectl patch pod <pod-name> -p '{"metadata":{"finalizers":[]}}' --type=merge
 - Prometheus showed spike in event count.
 - kubectl get events --sort-by=.metadata.creationTimestamp showed massive spam.
 - Found misbehaving controller repeating failure events.
+
+**Root Cause:** No rate limiting on event creation in controller logic.
