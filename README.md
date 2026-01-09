@@ -214,3 +214,7 @@ kubectl patch pod <pod-name> -p '{"metadata":{"finalizers":[]}}' --type=merge
 **How to Avoid:**
 - Use chronyd or systemd-timesyncd.
 - Monitor clock skew across nodes.
+
+---
+
+### 🔹 Scenario #7: API Server High Latency Due to Event Flooding
