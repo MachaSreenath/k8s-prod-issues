@@ -249,3 +249,5 @@ kubectl patch pod <pod-name> -p '{"metadata":{"finalizers":[]}}' --type=merge
 **Category:** Cluster Management
 
 **Environment:** K8s v1.24, DigitalOcean
+
+**Summary:** CoreDNS pods kept crashing due to a misconfigured Corefile.
