@@ -248,3 +248,4 @@ kubectl patch pod <pod-name> -p '{"metadata":{"finalizers":[]}}' --type=merge
 ### 🔹 Scenario #9: CoreDNS CrashLoop on Startup
 **Category:** Cluster Management
 
+**Environment:** K8s v1.24, DigitalOcean
