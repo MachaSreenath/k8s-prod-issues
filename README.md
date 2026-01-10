@@ -251,3 +251,10 @@ kubectl patch pod <pod-name> -p '{"metadata":{"finalizers":[]}}' --type=merge
 **Environment:** K8s v1.24, DigitalOcean
 
 **Summary:** CoreDNS pods kept crashing due to a misconfigured Corefile.
+
+**What Happened:** A team added a custom rewrite rule in the Corefile which had invalid syntax. CoreDNS failed to start.
+
+**Diagnosis Steps:**
+- Checked logs: syntax error on startup.
+- Used kubectl describe configmap coredns -n kube-system to inspect.
+- Reproduced issue in test cluster.
