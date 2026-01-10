@@ -258,3 +258,9 @@ kubectl patch pod <pod-name> -p '{"metadata":{"finalizers":[]}}' --type=merge
 - Checked logs: syntax error on startup.
 - Used kubectl describe configmap coredns -n kube-system to inspect.
 - Reproduced issue in test cluster.
+
+**Root Cause:** Corefile misconfigured – incorrect directive placement.
+
+**Fix/Workaround:**
+- Reverted to backup configmap.
+- Restarted CoreDNS.
