@@ -264,3 +264,9 @@ kubectl patch pod <pod-name> -p '{"metadata":{"finalizers":[]}}' --type=merge
 **Fix/Workaround:**
 - Reverted to backup configmap.
 - Restarted CoreDNS.
+
+**Lessons Learned:** DNS misconfigurations can cascade quickly.
+
+**How to Avoid:**
+- Use a CoreDNS validator before applying config.
+- Maintain versioned backups of Corefile.
