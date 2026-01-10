@@ -242,3 +242,7 @@ kubectl patch pod <pod-name> -p '{"metadata":{"finalizers":[]}}' --type=merge
 **How to Avoid:**
 - Use deduplicated or summarized event logic.
 - Set API server --event-ttl=1h and --eventRateLimit.
+
+---
+
+### 🔹 Scenario #9: CoreDNS CrashLoop on Startup
