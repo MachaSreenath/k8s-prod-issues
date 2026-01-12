@@ -270,3 +270,7 @@ kubectl patch pod <pod-name> -p '{"metadata":{"finalizers":[]}}' --type=merge
 **How to Avoid:**
 - Use a CoreDNS validator before applying config.
 - Maintain versioned backups of Corefile.
+
+---
+
+### 🔹 Scenario #10: Control Plane Unavailable After Flannel Misconfiguration
