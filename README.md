@@ -283,6 +283,19 @@ kubectl patch pod <pod-name> -p '{"metadata":{"finalizers":[]}}' --type=merge
 **What Happened:** A new node was added with a different pod CIDR than what Flannel expected. This broke pod-to-pod and node-to-control-plane communication.
 
 **Diagnosis Steps:**
-	• kubectl timed out from nodes.
-	• Logs showed dropped traffic in iptables.
-	• Compared --pod-cidr in kubelet and Flannel config.
+- kubectl timed out from nodes.
+- Logs showed dropped traffic in iptables.
+- Compared --pod-cidr in kubelet and Flannel config.
+
+**Root Cause:** Pod CIDRs weren’t consistent across node and Flannel.
+
+**Fix/Workaround:**
+- Reconfigured node with proper CIDR range.
+- Flushed iptables and restarted Flannel.
+
+**Lessons Learned:** CNI requires strict configuration consistency.
+
+**How to Avoid:**
+- Enforce CIDR policy via admission control.
+- Validate podCIDR ranges before adding new nodes.
+
