@@ -274,3 +274,6 @@ kubectl patch pod <pod-name> -p '{"metadata":{"finalizers":[]}}' --type=merge
 ---
 
 ### 🔹 Scenario #10: Control Plane Unavailable After Flannel Misconfiguration
+**Category:** Cluster Management
+
+**Environment:** K8s v1.18, On-prem, Flannel CNI
