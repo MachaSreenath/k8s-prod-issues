@@ -302,3 +302,15 @@ kubectl patch pod <pod-name> -p '{"metadata":{"finalizers":[]}}' --type=merge
 ---
 
 ### 🔹 Scenario #11: kube-proxy IPTables Rules Overlap Breaking Networking
+**Category:** Cluster Management
+
+**Environment:** K8s v1.22, On-prem with kube-proxy in IPTables mode
+
+**Scenario Summary:** Services became unreachable due to overlapping custom IPTables rules with kube-proxy rules.
+
+**What Happened:** A system admin added custom IPTables NAT rules for external routing, which inadvertently modified the same chains managed by kube-proxy.
+
+**Diagnosis Steps:**
+- DNS and service access failing intermittently.
+- Ran iptables-save | grep KUBE- – found modified chains.
+- Checked kube-proxy logs: warnings about rule insert failures.
