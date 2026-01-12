@@ -299,3 +299,6 @@ kubectl patch pod <pod-name> -p '{"metadata":{"finalizers":[]}}' --type=merge
 - Enforce CIDR policy via admission control.
 - Validate podCIDR ranges before adding new nodes.
 
+---
+
+### 🔹 Scenario #11: kube-proxy IPTables Rules Overlap Breaking Networking
