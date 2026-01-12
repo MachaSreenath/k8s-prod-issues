@@ -314,3 +314,20 @@ kubectl patch pod <pod-name> -p '{"metadata":{"finalizers":[]}}' --type=merge
 - DNS and service access failing intermittently.
 - Ran iptables-save | grep KUBE- – found modified chains.
 - Checked kube-proxy logs: warnings about rule insert failures.
+
+**Root Cause:** Manual IPTables rules conflicted with KUBE-SERVICES chains, causing rule precedence issues.
+
+**Fix/Workaround:**
+- Flushed custom rules and reloaded kube-proxy.
+
+bash
+```
+CopyEdit
+iptables -F; systemctl restart kube-proxy
+```
+
+**Lessons Learned:** Never mix manual IPTables rules with kube-proxy-managed chains.
+
+**How to Avoid:**
+- Use separate IPTables chains or policy routing.
+- Document any node-level firewall rules clearly.
