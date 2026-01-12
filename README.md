@@ -277,3 +277,12 @@ kubectl patch pod <pod-name> -p '{"metadata":{"finalizers":[]}}' --type=merge
 **Category:** Cluster Management
 
 **Environment:** K8s v1.18, On-prem, Flannel CNI
+
+**Scenario Summary:** Misaligned pod CIDRs caused overlay misrouting and API server failure.
+
+**What Happened:** A new node was added with a different pod CIDR than what Flannel expected. This broke pod-to-pod and node-to-control-plane communication.
+
+**Diagnosis Steps:**
+	• kubectl timed out from nodes.
+	• Logs showed dropped traffic in iptables.
+	• Compared --pod-cidr in kubelet and Flannel config.
