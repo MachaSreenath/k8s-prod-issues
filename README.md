@@ -349,3 +349,13 @@ iptables -F; systemctl restart kube-proxy
 	• Approval controller was disabled due to misconfiguration.
   
 **Root Cause:** Auto-approval for CSRs was turned off during a security patch, but not re-enabled.
+
+**Fix/Workaround:**
+bash
+```
+CopyEdit
+kubectl certificate approve <csr-name>
+```
+- Re-enabled the CSR approver controller.
+
+**Lessons Learned:** CSR management is critical for kubelet-node communication.
