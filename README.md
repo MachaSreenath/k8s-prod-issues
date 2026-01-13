@@ -345,7 +345,7 @@ iptables -F; systemctl restart kube-proxy
 
 **Diagnosis Steps:**
 - Ran kubectl get csr – saw >500 pending requests.
-- New nodes stuck at kubelet: ''waiting for server signing''.
+- New nodes stuck at kubelet: ```waiting for server signing```.
 - Approval controller was disabled due to misconfiguration.
   
 **Root Cause:** Auto-approval for CSRs was turned off during a security patch, but not re-enabled.
@@ -363,3 +363,6 @@ kubectl certificate approve <csr-name>
 **How to Avoid:**
 - Monitor pending CSRs.
 - Don’t disable kube-controller-manager flags like --cluster-signing-cert-file.
+
+---
+
