@@ -344,9 +344,9 @@ iptables -F; systemctl restart kube-proxy
 **What Happened:** A spike in expired certificate renewals caused hundreds of CSRs to queue, none of which were being auto-approved. New nodes waited indefinitely.
 
 **Diagnosis Steps:**
-	• Ran kubectl get csr – saw >500 pending requests.
-	• New nodes stuck at kubelet: “waiting for server signing”.
-	• Approval controller was disabled due to misconfiguration.
+- Ran kubectl get csr – saw >500 pending requests.
+- New nodes stuck at kubelet: ''waiting for server signing''.
+- Approval controller was disabled due to misconfiguration.
   
 **Root Cause:** Auto-approval for CSRs was turned off during a security patch, but not re-enabled.
 
