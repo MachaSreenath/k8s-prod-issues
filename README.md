@@ -331,3 +331,11 @@ iptables -F; systemctl restart kube-proxy
 **How to Avoid:**
 - Use separate IPTables chains or policy routing.
 - Document any node-level firewall rules clearly.
+
+---
+
+### 🔹 Scenario #12: Stuck CSR Requests Blocking New Node Joins
+**Category:** Cluster Management
+
+**Environment:** K8s v1.20, kubeadm cluster
+
