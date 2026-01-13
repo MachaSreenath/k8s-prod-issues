@@ -339,3 +339,7 @@ iptables -F; systemctl restart kube-proxy
 
 **Environment:** K8s v1.20, kubeadm cluster
 
+**Summary:** New nodes couldn’t join due to a backlog of unapproved CSRs.
+
+**What Happened:** A spike in expired certificate renewals caused hundreds of CSRs to queue, none of which were being auto-approved. New nodes waited indefinitely.
+
