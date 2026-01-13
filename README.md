@@ -359,3 +359,7 @@ kubectl certificate approve <csr-name>
 - Re-enabled the CSR approver controller.
 
 **Lessons Learned:** CSR management is critical for kubelet-node communication.
+
+**How to Avoid:**
+- Monitor pending CSRs.
+- Don’t disable kube-controller-manager flags like --cluster-signing-cert-file.
