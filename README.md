@@ -381,3 +381,9 @@ kubectl certificate approve <csr-name>
 - Verified pod not running via crictl ps.
 
 **Root Cause:** Human error editing the static pod manifest – invalid volumeMount path.
+
+**Fix/Workaround:**
+- Fixed manifest.
+- Restarted kubelet to load corrected pod.
+  
+**Lessons Learned:** Static pods need strict validation.
