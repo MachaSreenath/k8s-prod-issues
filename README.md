@@ -379,3 +379,5 @@ kubectl certificate approve <csr-name>
 - Checked /etc/kubernetes/manifests/etcd.yaml for errors.
 - Used journalctl -u kubelet to see static pod startup errors.
 - Verified pod not running via crictl ps.
+
+**Root Cause:** Human error editing the static pod manifest – invalid volumeMount path.
