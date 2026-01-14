@@ -375,3 +375,7 @@ kubectl certificate approve <csr-name>
 
 **What Happened:** During upgrade, etcd didn’t come up because its pod manifest had a typo. Kubelet never started etcd, causing control plane install to hang.
 
+**Diagnosis Steps:**
+- Checked /etc/kubernetes/manifests/etcd.yaml for errors.
+- Used journalctl -u kubelet to see static pod startup errors.
+- Verified pod not running via crictl ps.
