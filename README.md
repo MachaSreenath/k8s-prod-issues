@@ -387,3 +387,7 @@ kubectl certificate approve <csr-name>
 - Restarted kubelet to load corrected pod.
   
 **Lessons Learned:** Static pods need strict validation.
+
+**How to Avoid:**
+- Use YAML linter on static manifests.
+- Backup manifests before upgrade.
