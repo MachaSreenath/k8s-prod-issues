@@ -367,3 +367,6 @@ kubectl certificate approve <csr-name>
 ---
 
 ### 🔹 Scenario #13: Failed Cluster Upgrade Due to Unready Static Pods
+**Category:** Cluster Management
+
+**Environment:** K8s v1.21 → v1.23 upgrade, kubeadm
