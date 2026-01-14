@@ -366,3 +366,4 @@ kubectl certificate approve <csr-name>
 
 ---
 
+### 🔹 Scenario #13: Failed Cluster Upgrade Due to Unready Static Pods
