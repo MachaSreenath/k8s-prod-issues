@@ -370,3 +370,5 @@ kubectl certificate approve <csr-name>
 **Category:** Cluster Management
 
 **Environment:** K8s v1.21 → v1.23 upgrade, kubeadm
+
+**Summary:** Upgrade failed when static control plane pods weren’t ready due to invalid manifests.
