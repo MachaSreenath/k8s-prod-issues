@@ -391,3 +391,7 @@ kubectl certificate approve <csr-name>
 **How to Avoid:**
 - Use YAML linter on static manifests.
 - Backup manifests before upgrade.
+
+---
+
+### 🔹 Scenario #14: Uncontrolled Logs Filled Disk on All Nodes
