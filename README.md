@@ -395,3 +395,6 @@ kubectl certificate approve <csr-name>
 ---
 
 ### 🔹 Scenario #14: Uncontrolled Logs Filled Disk on All Nodes
+**Category:** Cluster Management 
+
+**Environment:** K8s v1.24, AWS EKS, containerd
