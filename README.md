@@ -398,3 +398,5 @@ kubectl certificate approve <csr-name>
 **Category:** Cluster Management 
 
 **Environment:** K8s v1.24, AWS EKS, containerd
+
+**Summary:** Application pods generated excessive logs, filling up node /var/log.
