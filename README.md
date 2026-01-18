@@ -420,3 +420,16 @@ kubectl certificate approve <csr-name>
 **How to Avoid:**
 - Set log rotation policies for container runtimes.
 - Enforce sane log levels via CI/CD validation.
+
+---
+
+### 🔹 Scenario #15: Node Drain Fails Due to PodDisruptionBudget Deadlock
+
+**Category:** Cluster Management
+
+**Environment:** K8s v1.21, production cluster with HPA and PDB
+
+**Summary:** kubectl drain never completed because PDBs blocked eviction.
+
+**What Happened:** A deployment had minAvailable: 2 in PDB, but only 2 pods were running. Node drain couldn’t evict either pod without violating PDB.
+
