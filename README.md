@@ -445,3 +445,7 @@ kubectl certificate approve <csr-name>
 - Scaled up replicas before drain.
   
 **Lessons Learned:** PDBs require careful coordination with replica count.
+
+**How to Avoid:**
+- Validate PDBs during deployment scale-downs.
+- Create alerts for PDB blocking evictions.
