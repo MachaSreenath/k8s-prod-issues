@@ -433,3 +433,9 @@ kubectl certificate approve <csr-name>
 
 **What Happened:** A deployment had minAvailable: 2 in PDB, but only 2 pods were running. Node drain couldn’t evict either pod without violating PDB.
 
+**Diagnosis Steps:**
+- Ran kubectl describe pdb <name> – saw AllowedDisruptions: 0.
+- Checked deployment and replica count.
+- Tried drain – stuck on pod eviction for 10+ minutes.
+  
+**Root Cause:** PDB guarantees clashed with under-scaled deployment.
