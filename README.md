@@ -407,3 +407,5 @@ kubectl certificate approve <csr-name>
 - df -h showed /var/log full.
 - Checked /var/log/containers/ – massive logs for one pod.
 - Used kubectl logs to confirm excessive output.
+
+**Root Cause:** A log level misconfiguration caused explosive growth in logs.
