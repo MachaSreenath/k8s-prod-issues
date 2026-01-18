@@ -400,3 +400,10 @@ kubectl certificate approve <csr-name>
 **Environment:** K8s v1.24, AWS EKS, containerd
 
 **Summary:** Application pods generated excessive logs, filling up node /var/log.
+
+**What Happened:** A debug flag was accidentally enabled in a backend pod, logging hundreds of lines/sec. The journald and container logs filled up all disk space.
+
+**Diagnosis Steps:**
+- df -h showed /var/log full.
+- Checked /var/log/containers/ – massive logs for one pod.
+- Used kubectl logs to confirm excessive output.
