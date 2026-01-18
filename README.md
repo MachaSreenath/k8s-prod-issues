@@ -439,3 +439,9 @@ kubectl certificate approve <csr-name>
 - Tried drain – stuck on pod eviction for 10+ minutes.
   
 **Root Cause:** PDB guarantees clashed with under-scaled deployment.
+
+**Fix/Workaround:**
+- Temporarily edited PDB to reduce minAvailable.
+- Scaled up replicas before drain.
+  
+**Lessons Learned:** PDBs require careful coordination with replica count.
