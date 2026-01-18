@@ -409,3 +409,14 @@ kubectl certificate approve <csr-name>
 - Used kubectl logs to confirm excessive output.
 
 **Root Cause:** A log level misconfiguration caused explosive growth in logs.
+
+**Fix/Workaround:**
+- Rotated and truncated logs.
+- Restarted container runtime after cleanup.
+- Disabled debug logging.
+ 
+**Lessons Learned:** Logging should be controlled and bounded.
+
+**How to Avoid:**
+- Set log rotation policies for container runtimes.
+- Enforce sane log levels via CI/CD validation.
