@@ -464,3 +464,9 @@ kubectl certificate approve <csr-name>
 - Checked pod logs in /var/log/pods/.
 - Saw panic error: “unknown admission plugin”.
 - Compared plugin list with K8s documentation.
+
+**Root Cause:** Version mismatch between config and actual controller-manager binary.
+
+**Fix/Workaround:**
+- Removed the deprecated plugin from startup flags.
+- Restarted pod.
