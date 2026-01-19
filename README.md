@@ -455,3 +455,8 @@ kubectl certificate approve <csr-name>
 **Category:** Cluster Management
 
 **Environment:** K8s v1.23, self-hosted control plane
+
+**Summary:** Controller-manager crashed on startup due to outdated admission controller configuration.
+
+**What Happened:** After an upgrade, the --enable-admission-plugins flag included a deprecated plugin, causing crash.
+
