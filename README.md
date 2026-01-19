@@ -278,7 +278,7 @@ kubectl patch pod <pod-name> -p '{"metadata":{"finalizers":[]}}' --type=merge
 
 **Environment:** K8s v1.18, On-prem, Flannel CNI
 
-**Scenario Summary:** Misaligned pod CIDRs caused overlay misrouting and API server failure.
+**Summary:** Misaligned pod CIDRs caused overlay misrouting and API server failure.
 
 **What Happened:** A new node was added with a different pod CIDR than what Flannel expected. This broke pod-to-pod and node-to-control-plane communication.
 
@@ -306,7 +306,7 @@ kubectl patch pod <pod-name> -p '{"metadata":{"finalizers":[]}}' --type=merge
 
 **Environment:** K8s v1.22, On-prem with kube-proxy in IPTables mode
 
-**Scenario Summary:** Services became unreachable due to overlapping custom IPTables rules with kube-proxy rules.
+**Summary:** Services became unreachable due to overlapping custom IPTables rules with kube-proxy rules.
 
 **What Happened:** A system admin added custom IPTables NAT rules for external routing, which inadvertently modified the same chains managed by kube-proxy.
 
@@ -476,3 +476,6 @@ kubectl certificate approve <csr-name>
 **How to Avoid:**
 - Track deprecations in each Kubernetes version.
 - Automate validation of startup flags.
+
+---
+
