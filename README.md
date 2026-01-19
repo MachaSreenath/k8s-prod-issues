@@ -470,3 +470,9 @@ kubectl certificate approve <csr-name>
 **Fix/Workaround:**
 - Removed the deprecated plugin from startup flags.
 - Restarted pod.
+
+**Lessons Learned:** Admission plugin deprecations are silent but fatal.
+
+**How to Avoid:**
+- Track deprecations in each Kubernetes version.
+- Automate validation of startup flags.
