@@ -424,7 +424,6 @@ kubectl certificate approve <csr-name>
 ---
 
 ### 🔹 Scenario #15: Node Drain Fails Due to PodDisruptionBudget Deadlock
-
 **Category:** Cluster Management
 
 **Environment:** K8s v1.21, production cluster with HPA and PDB
@@ -453,3 +452,6 @@ kubectl certificate approve <csr-name>
 ---
 
 ### 🔹 Scenario #16: CrashLoop of Kube-Controller-Manager on Boot
+**Category:** Cluster Management
+
+**Environment:** K8s v1.23, self-hosted control plane
