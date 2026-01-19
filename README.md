@@ -460,3 +460,7 @@ kubectl certificate approve <csr-name>
 
 **What Happened:** After an upgrade, the --enable-admission-plugins flag included a deprecated plugin, causing crash.
 
+**Diagnosis Steps:**
+- Checked pod logs in /var/log/pods/.
+- Saw panic error: “unknown admission plugin”.
+- Compared plugin list with K8s documentation.
