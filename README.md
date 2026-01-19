@@ -449,3 +449,7 @@ kubectl certificate approve <csr-name>
 **How to Avoid:**
 - Validate PDBs during deployment scale-downs.
 - Create alerts for PDB blocking evictions.
+
+---
+
+### 🔹 Scenario #16: CrashLoop of Kube-Controller-Manager on Boot
