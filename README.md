@@ -487,3 +487,8 @@ kubectl certificate approve <csr-name>
 **Summary:** A partial etcd restore led to stale object references and broken dependencies.
 
 **What Happened:** etcd snapshot was restored, but PVCs and secrets weren’t included. Many pods failed to mount or pull secrets.
+
+**Diagnosis Steps:**
+- Pods failed with “volume not found” and “secret missing”.
+- kubectl get pvc --all-namespaces returned empty.
+- Compared resource counts pre- and post-restore.
