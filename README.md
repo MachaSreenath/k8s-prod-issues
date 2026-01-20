@@ -480,3 +480,6 @@ kubectl certificate approve <csr-name>
 ---
 
 ### 🔹 Scenario #17: Inconsistent Cluster State After Partial Backup Restore
+**Category:** Cluster Management
+
+**Environment:** K8s v1.24, Velero-based etcd backup
