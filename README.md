@@ -483,3 +483,7 @@ kubectl certificate approve <csr-name>
 **Category:** Cluster Management
 
 **Environment:** K8s v1.24, Velero-based etcd backup
+
+**Summary:** A partial etcd restore led to stale object references and broken dependencies.
+
+**What Happened:** etcd snapshot was restored, but PVCs and secrets weren’t included. Many pods failed to mount or pull secrets.
