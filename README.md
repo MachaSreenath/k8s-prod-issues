@@ -479,3 +479,4 @@ kubectl certificate approve <csr-name>
 
 ---
 
+### 🔹 Scenario #17: Inconsistent Cluster State After Partial Backup Restore
