@@ -519,4 +519,10 @@ kubectl certificate approve <csr-name>
 **Diagnosis Steps:**
 - kubectl describe pod showed ImagePullBackOff.
 - Checked environment variables for kubelet via systemctl show kubelet.
-	• Verified lack of NO_PROXY.
+- Verified lack of NO_PROXY.
+
+**Root Cause:** Proxy config caused kubelet to route internal cluster DNS and registry traffic through the proxy.
+
+**Fix/Workaround:**
+- Updated kubelet service file to include proper NO_PROXY.
+- Restarted kubelet.
