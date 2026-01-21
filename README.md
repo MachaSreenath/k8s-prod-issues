@@ -498,3 +498,9 @@ kubectl certificate approve <csr-name>
 **Fix/Workaround:**
 - Manually recreated PVCs and secrets using backups from another tool.
 - Redeployed apps.
+
+**Lessons Learned:** etcd backup is not enough alone.
+
+**How to Avoid:**
+	• Use backup tools that support volume + etcd (e.g., Velero with restic).
+	• Periodically test full cluster restores.
