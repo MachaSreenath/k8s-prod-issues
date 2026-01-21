@@ -492,3 +492,9 @@ kubectl certificate approve <csr-name>
 - Pods failed with “volume not found” and “secret missing”.
 - kubectl get pvc --all-namespaces returned empty.
 - Compared resource counts pre- and post-restore.
+
+**Root Cause:** Restore did not include volume snapshots or Kubernetes secrets, leading to an incomplete object graph.
+
+**Fix/Workaround:**
+- Manually recreated PVCs and secrets using backups from another tool.
+- Redeployed apps.
