@@ -526,3 +526,9 @@ kubectl certificate approve <csr-name>
 **Fix/Workaround:**
 - Updated kubelet service file to include proper NO_PROXY.
 - Restarted kubelet.
+
+**Lessons Learned:** Proxies in K8s require deep planning.
+
+**How to Avoid:**
+- Always set NO_PROXY with service CIDRs and cluster domains.
+- Test image pulls with isolated nodes first.
