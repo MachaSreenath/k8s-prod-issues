@@ -508,3 +508,4 @@ kubectl certificate approve <csr-name>
 ---
 
 ### 🔹 Scenario #18: kubelet Unable to Pull Images Due to Proxy Misconfig
+**Category:** Cluster Management
