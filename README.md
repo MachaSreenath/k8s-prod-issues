@@ -509,3 +509,7 @@ kubectl certificate approve <csr-name>
 
 ### 🔹 Scenario #18: kubelet Unable to Pull Images Due to Proxy Misconfig
 **Category:** Cluster Management
+
+**Environment:** K8s v1.25, Corporate proxy network
+
+**Summary:** Nodes failed to pull images from DockerHub due to incorrect proxy environment configuration.
