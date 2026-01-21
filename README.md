@@ -502,5 +502,9 @@ kubectl certificate approve <csr-name>
 **Lessons Learned:** etcd backup is not enough alone.
 
 **How to Avoid:**
-	• Use backup tools that support volume + etcd (e.g., Velero with restic).
-	• Periodically test full cluster restores.
+- Use backup tools that support volume + etcd (e.g., Velero with restic).
+- Periodically test full cluster restores.
+
+---
+
+### 🔹 Scenario #18: kubelet Unable to Pull Images Due to Proxy Misconfig
