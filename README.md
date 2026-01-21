@@ -513,3 +513,10 @@ kubectl certificate approve <csr-name>
 **Environment:** K8s v1.25, Corporate proxy network
 
 **Summary:** Nodes failed to pull images from DockerHub due to incorrect proxy environment configuration.
+
+**What Happened:** New kubelet config missed NO_PROXY=10.0.0.0/8,kubernetes.default.svc, causing internal DNS failures and image pull errors.
+
+**Diagnosis Steps:**
+- kubectl describe pod showed ImagePullBackOff.
+- Checked environment variables for kubelet via systemctl show kubelet.
+	• Verified lack of NO_PROXY.
