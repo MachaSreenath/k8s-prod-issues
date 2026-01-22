@@ -554,3 +554,9 @@ kubectl certificate approve <csr-name>
 **Fix/Workaround:**
 - Replaced cable and switch port.
 - Set up redundant bonding with failover.
+
+**Lessons Learned:** Physical layer issues can appear as node flakiness.
+
+**How to Avoid:**
+- Monitor NIC link status and configure bonding.
+- Proactively audit switch port health.
