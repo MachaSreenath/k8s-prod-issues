@@ -544,3 +544,7 @@ kubectl certificate approve <csr-name>
 
 **What Happened:** A network switch port had flapping issues, leading to periodic loss of node heartbeats.
 
+**Diagnosis Steps:**
+- Node status flapped between Ready and NotReady.
+- Checked NIC logs via dmesg and ethtool.
+- Observed link flaps in switch logs.
