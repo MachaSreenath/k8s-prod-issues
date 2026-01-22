@@ -532,3 +532,8 @@ kubectl certificate approve <csr-name>
 **How to Avoid:**
 - Always set NO_PROXY with service CIDRs and cluster domains.
 - Test image pulls with isolated nodes first.
+
+---
+
+### 🔹 Scenario #19: Multiple Nodes Marked Unreachable Due to Flaky Network Interface
+**Category:** Cluster Management
