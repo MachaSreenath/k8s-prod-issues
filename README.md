@@ -541,3 +541,6 @@ kubectl certificate approve <csr-name>
 **Environment:** K8s v1.22, Bare-metal, bonded NICs
 
 **Summary:** Flapping interface on switch caused nodes to be marked NotReady intermittently.
+
+**What Happened:** A network switch port had flapping issues, leading to periodic loss of node heartbeats.
+
