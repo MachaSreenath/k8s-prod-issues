@@ -537,3 +537,5 @@ kubectl certificate approve <csr-name>
 
 ### 🔹 Scenario #19: Multiple Nodes Marked Unreachable Due to Flaky Network Interface
 **Category:** Cluster Management
+
+**Environment:** K8s v1.22, Bare-metal, bonded NICs
