@@ -551,3 +551,6 @@ kubectl certificate approve <csr-name>
 
 **Root Cause:** Hardware or cable issue causing loss of connectivity.
 
+**Fix/Workaround:**
+- Replaced cable and switch port.
+- Set up redundant bonding with failover.
