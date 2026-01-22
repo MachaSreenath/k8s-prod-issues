@@ -548,3 +548,6 @@ kubectl certificate approve <csr-name>
 - Node status flapped between Ready and NotReady.
 - Checked NIC logs via dmesg and ethtool.
 - Observed link flaps in switch logs.
+
+**Root Cause:** Hardware or cable issue causing loss of connectivity.
+
