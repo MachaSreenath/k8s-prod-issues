@@ -539,3 +539,5 @@ kubectl certificate approve <csr-name>
 **Category:** Cluster Management
 
 **Environment:** K8s v1.22, Bare-metal, bonded NICs
+
+**Summary:** Flapping interface on switch caused nodes to be marked NotReady intermittently.
