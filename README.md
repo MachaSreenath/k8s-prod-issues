@@ -570,3 +570,4 @@ kubectl certificate approve <csr-name>
 
 **Summary:** A DaemonSet used for node labeling overwrote existing labels used by schedulers.
 
+**What Happened:** A platform team deployed a DaemonSet that set node labels like zone=us-east, but it overwrote custom labels like gpu=true.
