@@ -579,3 +579,6 @@ kubectl certificate approve <csr-name>
 
 **Root Cause:** Label management script used kubectl label node <node> key=value --overwrite, removing other labels.
 
+**Fix/Workaround:**
+- Restored original labels from backup.
+- Updated script to merge labels.
