@@ -568,3 +568,5 @@ kubectl certificate approve <csr-name>
 
 **Environment:** K8s v1.24, DaemonSet-based node config
 
+**Summary:** A DaemonSet used for node labeling overwrote existing labels used by schedulers.
+
