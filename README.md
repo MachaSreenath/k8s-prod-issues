@@ -582,3 +582,9 @@ kubectl certificate approve <csr-name>
 **Fix/Workaround:**
 - Restored original labels from backup.
 - Updated script to merge labels.
+
+**Lessons Learned:** Node labels are critical for scheduling decisions.
+
+**How to Avoid:**
+- Use label merging logic (e.g., fetch current labels, then patch).
+- Protect key node labels via admission controllers.
