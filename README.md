@@ -576,3 +576,6 @@ kubectl certificate approve <csr-name>
 - Pods no longer scheduled to GPU nodes.
 - kubectl get nodes --show-labels showed gpu label missing.
 - Checked DaemonSet script – labels were overwritten, not merged.
+
+**Root Cause:** Label management script used kubectl label node <node> key=value --overwrite, removing other labels.
+
