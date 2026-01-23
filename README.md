@@ -565,3 +565,6 @@ kubectl certificate approve <csr-name>
 
 ### 🔹 Scenario #20: Node Labels Accidentally Overwritten by DaemonSet
 **Category:** Cluster Management
+
+**Environment:** K8s v1.24, DaemonSet-based node config
+
