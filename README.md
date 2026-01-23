@@ -560,3 +560,8 @@ kubectl certificate approve <csr-name>
 **How to Avoid:**
 - Monitor NIC link status and configure bonding.
 - Proactively audit switch port health.
+
+---
+
+### 🔹 Scenario #20: Node Labels Accidentally Overwritten by DaemonSet
+**Category:** Cluster Management
