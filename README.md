@@ -588,3 +588,6 @@ kubectl certificate approve <csr-name>
 **How to Avoid:**
 - Use label merging logic (e.g., fetch current labels, then patch).
 - Protect key node labels via admission controllers.
+
+---
+
