@@ -592,3 +592,7 @@ kubectl certificate approve <csr-name>
 ---
 
 ### 🔹 Scenario #21: Cluster Autoscaler Continuously Spawning and Deleting Nodes
+**Category:** Cluster Management
+
+**Environment:** K8s v1.24, AWS EKS with Cluster Autoscaler
+
