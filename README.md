@@ -600,3 +600,8 @@ kubectl certificate approve <csr-name>
 
 **What Happened:** A misconfigured deployment had a readiness probe that failed intermittently, making pods seem unready. Cluster Autoscaler detected these as unschedulable, triggering new node provisioning. Once the pod appeared healthy again, Autoscaler would scale down.
 
+**Diagnosis Steps:**
+- Monitored Cluster Autoscaler logs (kubectl -n kube-system logs -l app=cluster-autoscaler).
+- Identified repeated scale-up and scale-down messages.
+- Traced back to a specific deployment’s readiness probe.
+
