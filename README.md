@@ -610,3 +610,6 @@ kubectl certificate approve <csr-name>
 **Fix/Workaround:**
 - Fixed the readiness probe to accurately reflect pod health.
 - Tuned scale-down-delay-after-add and scale-down-unneeded-time settings.
+
+**Lessons Learned:** Readiness probes directly impact Autoscaler decisions.
+
