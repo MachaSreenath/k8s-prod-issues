@@ -591,3 +591,4 @@ kubectl certificate approve <csr-name>
 
 ---
 
+### 🔹 Scenario #21: Cluster Autoscaler Continuously Spawning and Deleting Nodes
