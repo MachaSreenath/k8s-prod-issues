@@ -605,3 +605,5 @@ kubectl certificate approve <csr-name>
 - Identified repeated scale-up and scale-down messages.
 - Traced back to a specific deployment’s readiness probe.
 
+**Root Cause:** Flaky readiness probe created false unschedulable pods.
+
