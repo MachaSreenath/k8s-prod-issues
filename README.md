@@ -607,3 +607,6 @@ kubectl certificate approve <csr-name>
 
 **Root Cause:** Flaky readiness probe created false unschedulable pods.
 
+**Fix/Workaround:**
+- Fixed the readiness probe to accurately reflect pod health.
+- Tuned scale-down-delay-after-add and scale-down-unneeded-time settings.
