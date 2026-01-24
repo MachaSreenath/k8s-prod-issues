@@ -596,3 +596,5 @@ kubectl certificate approve <csr-name>
 
 **Environment:** K8s v1.24, AWS EKS with Cluster Autoscaler
 
+**Summary:** The cluster was rapidly scaling up and down, creating instability in workloads.
+
