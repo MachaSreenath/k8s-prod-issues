@@ -613,3 +613,9 @@ kubectl certificate approve <csr-name>
 
 **Lessons Learned:** Readiness probes directly impact Autoscaler decisions.
 
+**How to Avoid:**
+- Validate all probes before production deployments.
+- Use Autoscaler logging to audit scaling activity.
+
+---
+
