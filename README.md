@@ -627,3 +627,8 @@ kubectl certificate approve <csr-name>
 **Summary:** A namespace remained in “Terminating” state indefinitely.
 
 **What Happened:** The namespace contained resources with finalizers pointing to a deleted controller. Kubernetes waited forever for the finalizer to complete cleanup.
+
+**Diagnosis Steps:**
+- Ran kubectl get ns <name> -o json – saw dangling finalizers.
+- Checked for the corresponding CRD/controller – it was uninstalled.
+
