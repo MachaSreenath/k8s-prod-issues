@@ -622,3 +622,4 @@ kubectl certificate approve <csr-name>
 ### 🔹 Scenario #22: Stale Finalizers Preventing Namespace Deletion
 **Category:** Cluster Management
 
+**Environment:** K8s v1.21, self-managed
