@@ -619,3 +619,4 @@ kubectl certificate approve <csr-name>
 
 ---
 
+### 🔹 Scenario #22: Stale Finalizers Preventing Namespace Deletion
