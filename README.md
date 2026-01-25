@@ -111,11 +111,12 @@ kubectl patch pod <pod-name> -p '{"metadata":{"finalizers":[]}}' --type=merge
 **Root Cause:** Lack of compaction and snapshotting caused disk to fill up with historical revisions and WALs.
 
 **Fix/Workaround:**
-- bash
-- CopyEdit
-- etcdctl compact <rev>
-- etcdctl defrag
-  - Cleaned logs, snapshots, and increased disk space temporarily.
+bash
+```
+etcdctl compact <rev>
+etcdctl defrag
+```
+- Cleaned logs, snapshots, and increased disk space temporarily.
 
 **Lessons Learned:**
 - etcd requires periodic maintenance.
@@ -322,7 +323,6 @@ kubectl patch pod <pod-name> -p '{"metadata":{"finalizers":[]}}' --type=merge
 
 bash
 ```
-CopyEdit
 iptables -F; systemctl restart kube-proxy
 ```
 
@@ -353,7 +353,6 @@ iptables -F; systemctl restart kube-proxy
 **Fix/Workaround:**
 bash
 ```
-CopyEdit
 kubectl certificate approve <csr-name>
 ```
 - Re-enabled the CSR approver controller.
@@ -639,7 +638,6 @@ kubectl certificate approve <csr-name>
 
 bash
 ```
-CopyEdit
 kubectl patch ns <name> -p '{"spec":{"finalizers":[]}}' --type=merge
 ```
 
@@ -648,3 +646,6 @@ kubectl patch ns <name> -p '{"spec":{"finalizers":[]}}' --type=merge
 **How to Avoid:**
 - Implement controller cleanup logic.
 - Audit finalizers periodically.
+
+---
+
