@@ -623,3 +623,5 @@ kubectl certificate approve <csr-name>
 **Category:** Cluster Management
 
 **Environment:** K8s v1.21, self-managed
+
+**Summary:** A namespace remained in “Terminating” state indefinitely.
