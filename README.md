@@ -632,3 +632,4 @@ kubectl certificate approve <csr-name>
 - Ran kubectl get ns <name> -o json – saw dangling finalizers.
 - Checked for the corresponding CRD/controller – it was uninstalled.
 
+**Root Cause:** Finalizers without owning controller cause resource lifecycle deadlocks.
