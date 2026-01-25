@@ -625,3 +625,5 @@ kubectl certificate approve <csr-name>
 **Environment:** K8s v1.21, self-managed
 
 **Summary:** A namespace remained in “Terminating” state indefinitely.
+
+**What Happened:** The namespace contained resources with finalizers pointing to a deleted controller. Kubernetes waited forever for the finalizer to complete cleanup.
