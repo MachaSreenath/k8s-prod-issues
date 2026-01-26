@@ -649,3 +649,6 @@ kubectl patch ns <name> -p '{"spec":{"finalizers":[]}}' --type=merge
 
 ---
 
+### 🔹 Scenario #23: CoreDNS CrashLoop Due to Invalid ConfigMap Update
+**Category:** Cluster Management
+
