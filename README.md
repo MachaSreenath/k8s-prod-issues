@@ -670,3 +670,10 @@ kubectl patch ns <name> -p '{"spec":{"finalizers":[]}}' --type=merge
 - Restarted CoreDNS pods to pick up change.
 
 **Lessons Learned:** ConfigMap changes can instantly affect cluster-wide services.
+
+**How to Avoid:**
+- Use coredns -conf <file> locally to validate changes.
+- Test changes in a non-prod namespace before rollout.
+
+---
+
