@@ -658,3 +658,8 @@ kubectl patch ns <name> -p '{"spec":{"finalizers":[]}}' --type=merge
 
 **What Happened:** A platform engineer edited the CoreDNS ConfigMap to add a rewrite rule, but introduced a syntax error. The new pods started crashing, and DNS resolution stopped working across the cluster.
 
+**Diagnosis Steps:**
+- Ran kubectl logs -n kube-system -l k8s-app=kube-dns – saw config parse errors.
+- Used kubectl describe pod to confirm CrashLoopBackOff.
+- Validated config against CoreDNS docs.
+
