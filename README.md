@@ -664,3 +664,8 @@ kubectl patch ns <name> -p '{"spec":{"finalizers":[]}}' --type=merge
 - Validated config against CoreDNS docs.
 
 **Root Cause:** Invalid configuration line in CoreDNS ConfigMap.
+
+**Fix/Workaround:**
+- Rolled back to previous working ConfigMap.
+- Restarted CoreDNS pods to pick up change.
+
