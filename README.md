@@ -663,3 +663,4 @@ kubectl patch ns <name> -p '{"spec":{"finalizers":[]}}' --type=merge
 - Used kubectl describe pod to confirm CrashLoopBackOff.
 - Validated config against CoreDNS docs.
 
+**Root Cause:** Invalid configuration line in CoreDNS ConfigMap.
