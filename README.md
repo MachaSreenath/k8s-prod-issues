@@ -653,3 +653,5 @@ kubectl patch ns <name> -p '{"spec":{"finalizers":[]}}' --type=merge
 **Category:** Cluster Management
 
 **Environment:** K8s v1.23, managed GKE
+
+**Summary:** CoreDNS stopped resolving names cluster-wide after a config update.
