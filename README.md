@@ -677,3 +677,4 @@ kubectl patch ns <name> -p '{"spec":{"finalizers":[]}}' --type=merge
 
 ---
 
+### 🔹 Scenario #24: Pod Eviction Storm Due to DiskPressure
