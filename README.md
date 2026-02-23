@@ -693,3 +693,11 @@ kubectl patch ns <name> -p '{"spec":{"finalizers":[]}}' --type=merge
 
 **Root Cause:** No image GC and too many simultaneous pulls filled up disk space.
 
+**Lessons Learned:** DiskPressure can take down entire nodes without warning.
+
+**How to Avoid:**
+- Set eviction thresholds properly in kubelet.
+- Enforce rolling update limits (maxUnavailable).
+
+---
+
