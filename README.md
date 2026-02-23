@@ -686,3 +686,10 @@ kubectl patch ns <name> -p '{"spec":{"finalizers":[]}}' --type=merge
 
 **What Happened:** A nightly batch job triggered a container image update across thousands of pods. Pulling these images used all available space in /var/lib/containerd, which led to node condition DiskPressure, forcing eviction of critical workloads.
 
+**Diagnosis Steps:**
+- Used kubectl describe node – found DiskPressure=True.
+- Inspected /var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/.
+- Checked image pull logs.
+
+**Root Cause:** No image GC and too many simultaneous pulls filled up disk space.
+
