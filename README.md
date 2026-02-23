@@ -681,3 +681,8 @@ kubectl patch ns <name> -p '{"spec":{"finalizers":[]}}' --type=merge
 **Category:** Cluster Management
 
 **Environment:** K8s v1.25, self-managed, containerd
+
+**Summary:** A sudden spike in image pulls caused all nodes to hit disk pressure, leading to massive pod evictions.
+
+**What Happened:** A nightly batch job triggered a container image update across thousands of pods. Pulling these images used all available space in /var/lib/containerd, which led to node condition DiskPressure, forcing eviction of critical workloads.
+
