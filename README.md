@@ -747,3 +747,19 @@ kubectl patch ns <name> -p '{"spec":{"finalizers":[]}}' --type=merge
 
 **Fix/Workaround:**
 - Added proper tolerations to workloads:
+
+yaml
+CopyEdit
+tolerations:
+- key: "node-role.kubernetes.io/gpu"
+  operator: "Exists"
+  effect: "NoSchedule"
+  
+**Lessons Learned:** Node taints should be coordinated with scheduling policies.
+
+**How to Avoid:**
+- Use preset toleration templates in CI/CD pipelines.
+- Test new node pools with dummy workloads.
+
+---
+
