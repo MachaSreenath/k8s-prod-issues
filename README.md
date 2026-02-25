@@ -717,3 +717,7 @@ kubectl patch ns <name> -p '{"spec":{"finalizers":[]}}' --type=merge
 
 **Root Cause:** ReclaimPolicy set to Retain and no manual cleanup.
 
+**Fix/Workaround:**
+- Manually deleted orphaned PVs.
+- Changed ReclaimPolicy to Delete for similar volumes.
+
