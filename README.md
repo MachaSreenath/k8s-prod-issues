@@ -723,3 +723,9 @@ kubectl patch ns <name> -p '{"spec":{"finalizers":[]}}' --type=merge
 
 **Lessons Learned:** PV lifecycle must be actively monitored.
 
+**How to Avoid:**
+- Add cleanup logic in storage lifecycle.
+- Implement PV alerts based on state.
+
+---
+
