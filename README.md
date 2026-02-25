@@ -702,4 +702,9 @@ kubectl patch ns <name> -p '{"spec":{"finalizers":[]}}' --type=merge
 ---
 
 ### 🔹 Scenario #25: Orphaned PVs Causing Unscheduled Pods
-Category: Cluster Management
+**Category:** Cluster Management
+
+**Environment:** K8s v1.20, CSI storage on vSphere
+
+**Summary:** PVCs were stuck in Pending state due to existing orphaned PVs in Released state.
+
