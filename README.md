@@ -729,3 +729,21 @@ kubectl patch ns <name> -p '{"spec":{"finalizers":[]}}' --type=merge
 
 ---
 
+### 🔹 Scenario #26: Taints and Tolerations Mismatch Prevented Workload Scheduling
+
+**Category:** Cluster Management
+
+**Environment:** K8s v1.22, managed AKS
+
+**Summary:** Workloads failed to schedule on new nodes that had a taint the workloads didn’t tolerate.
+
+**What Happened:** Platform team added a new node pool with node-role.kubernetes.io/gpu:NoSchedule, but forgot to add tolerations to GPU workloads.
+
+**Diagnosis Steps:**
+- kubectl describe pod – showed reason: “0/3 nodes are available: node(s) had taints”.
+- Checked node taints via kubectl get nodes -o json.
+
+**Root Cause:** Taints on new node pool weren’t matched by tolerations in pods.
+
+**Fix/Workaround:**
+- Added proper tolerations to workloads:
