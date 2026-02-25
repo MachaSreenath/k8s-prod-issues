@@ -708,3 +708,5 @@ kubectl patch ns <name> -p '{"spec":{"finalizers":[]}}' --type=merge
 
 **Summary:** PVCs were stuck in Pending state due to existing orphaned PVs in Released state.
 
+**What Happened:** After pod deletion, PVs went into Released state but were never cleaned up due to missing ReclaimPolicy logic. When new PVCs requested the same storage class, provisioning failed.
+
