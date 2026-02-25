@@ -721,3 +721,5 @@ kubectl patch ns <name> -p '{"spec":{"finalizers":[]}}' --type=merge
 - Manually deleted orphaned PVs.
 - Changed ReclaimPolicy to Delete for similar volumes.
 
+**Lessons Learned:** PV lifecycle must be actively monitored.
+
