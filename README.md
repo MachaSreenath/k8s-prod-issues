@@ -715,3 +715,5 @@ kubectl patch ns <name> -p '{"spec":{"finalizers":[]}}' --type=merge
 - kubectl get pv – old PVs stuck in Released.
 - CSI driver logs showed volume claim conflicts.
 
+**Root Cause:** ReclaimPolicy set to Retain and no manual cleanup.
+
