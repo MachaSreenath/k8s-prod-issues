@@ -701,3 +701,5 @@ kubectl patch ns <name> -p '{"spec":{"finalizers":[]}}' --type=merge
 
 ---
 
+### 🔹 Scenario #25: Orphaned PVs Causing Unscheduled Pods
+Category: Cluster Management
