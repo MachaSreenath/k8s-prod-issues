@@ -710,3 +710,8 @@ kubectl patch ns <name> -p '{"spec":{"finalizers":[]}}' --type=merge
 
 **What Happened:** After pod deletion, PVs went into Released state but were never cleaned up due to missing ReclaimPolicy logic. When new PVCs requested the same storage class, provisioning failed.
 
+**Diagnosis Steps:**
+- Ran kubectl get pvc – saw Pending PVCs.
+- kubectl get pv – old PVs stuck in Released.
+- CSI driver logs showed volume claim conflicts.
+
