@@ -763,3 +763,4 @@ tolerations:
 
 ---
 
+### 🔹 Scenario #27: Node Bootstrap Failure Due to Unavailable Container Registry
