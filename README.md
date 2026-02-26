@@ -771,3 +771,5 @@ tolerations:
 
 **Summary:** New nodes failed to join the cluster due to container runtime timeout when pulling base images.
 
+**What Happened:** The internal Docker registry was down during node provisioning, so containerd couldn't pull pauseand CNI images. Nodes stayed in NotReady state.
+
