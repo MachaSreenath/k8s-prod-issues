@@ -777,3 +777,5 @@ tolerations:
 - journalctl -u containerd – repeated image pull failures.
 - Node conditions showed ContainerRuntimeNotReady.
 
+**Root Cause:** Bootstrap process relies on image pulls from unavailable registry.
+
