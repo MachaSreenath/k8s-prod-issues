@@ -773,3 +773,7 @@ tolerations:
 
 **What Happened:** The internal Docker registry was down during node provisioning, so containerd couldn't pull pauseand CNI images. Nodes stayed in NotReady state.
 
+**Diagnosis Steps:**
+- journalctl -u containerd – repeated image pull failures.
+- Node conditions showed ContainerRuntimeNotReady.
+
