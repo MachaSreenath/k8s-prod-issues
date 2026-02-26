@@ -785,3 +785,7 @@ tolerations:
 
 **Lessons Learned:** Registry availability is a bootstrap dependency.
 
+**How to Avoid:**
+- Preload all essential images into AMI/base image.
+- Monitor registry uptime independently.
+
