@@ -779,3 +779,7 @@ tolerations:
 
 **Root Cause:** Bootstrap process relies on image pulls from unavailable registry.
 
+**Fix/Workaround:**
+- Brought internal registry back online.
+- Pre-pulled pause/CNI images to node image templates.
+
