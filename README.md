@@ -783,3 +783,5 @@ tolerations:
 - Brought internal registry back online.
 - Pre-pulled pause/CNI images to node image templates.
 
+**Lessons Learned:** Registry availability is a bootstrap dependency.
+
