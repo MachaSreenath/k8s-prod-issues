@@ -768,3 +768,6 @@ tolerations:
 **Category:** Cluster Management
 
 **Environment:** K8s v1.21, on-prem, private registry
+
+**Summary:** New nodes failed to join the cluster due to container runtime timeout when pulling base images.
+
