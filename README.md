@@ -764,3 +764,7 @@ tolerations:
 ---
 
 ### 🔹 Scenario #27: Node Bootstrap Failure Due to Unavailable Container Registry
+
+**Category:** Cluster Management
+
+**Environment:** K8s v1.21, on-prem, private registry
