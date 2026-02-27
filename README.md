@@ -806,3 +806,5 @@ tolerations:
 
 **Root Cause:** Kubelet cert rotation missed due to node downtime.
 
+**Fix/Workaround:**
+- Regenerated kubelet certs using kubeadm.
