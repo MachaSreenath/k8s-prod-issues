@@ -794,3 +794,5 @@ tolerations:
 ### 🔹 Scenario #28: kubelet Fails to Start Due to Expired TLS Certs
 **Category:** Cluster Management
 
+**Environment:** K8s v1.19, kubeadm cluster
+
