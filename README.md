@@ -789,3 +789,8 @@ tolerations:
 - Preload all essential images into AMI/base image.
 - Monitor registry uptime independently.
 
+---
+
+### 🔹 Scenario #28: kubelet Fails to Start Due to Expired TLS Certs
+**Category:** Cluster Management
+
