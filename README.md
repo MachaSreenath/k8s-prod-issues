@@ -796,3 +796,7 @@ tolerations:
 
 **Environment:** K8s v1.19, kubeadm cluster
 
+**Summary:** Several nodes went NotReady after reboot due to kubelet failing to start with expired client certs.
+
+**What Happened:** Kubelet uses a client certificate for authentication with the API server. These are typically auto-rotated, but the nodes were offline when the rotation was due.
+
