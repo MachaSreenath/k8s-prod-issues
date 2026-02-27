@@ -808,3 +808,10 @@ tolerations:
 
 **Fix/Workaround:**
 - Regenerated kubelet certs using kubeadm.
+
+bash
+CopyEdit
+kubeadm certs renew all
+
+**Lessons Learned:** Cert rotation has a dependency on uptime.
+
