@@ -815,3 +815,8 @@ kubeadm certs renew all
 
 **Lessons Learned:** Cert rotation has a dependency on uptime.
 
+**How to Avoid:**
+- Monitor cert expiry proactively.
+- Rotate certs manually before planned outages.
+
+---
