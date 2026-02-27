@@ -804,3 +804,5 @@ tolerations:
 - journalctl -u kubelet – cert expired error.
 - /var/lib/kubelet/pki/kubelet-client-current.pem – expired date.
 
+**Root Cause:** Kubelet cert rotation missed due to node downtime.
+
