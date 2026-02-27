@@ -800,3 +800,7 @@ tolerations:
 
 **What Happened:** Kubelet uses a client certificate for authentication with the API server. These are typically auto-rotated, but the nodes were offline when the rotation was due.
 
+**Diagnosis Steps:**
+- journalctl -u kubelet – cert expired error.
+- /var/lib/kubelet/pki/kubelet-client-current.pem – expired date.
+
