@@ -824,3 +824,5 @@ kubeadm certs renew all
 ### 🔹 Scenario #29: kube-scheduler Crash Due to Invalid Leader Election Config
 **Category:** Cluster Management
 
+Environment: K8s v1.24, custom scheduler deployment
+
