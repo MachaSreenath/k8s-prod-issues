@@ -829,3 +829,8 @@ kubeadm certs renew all
 **Summary:** kube-scheduler pod failed with panic due to misconfigured leader election flags.
 
 **What Happened:** An override in the Helm chart introduced an invalid leader election namespace, causing the scheduler to panic and crash on startup.
+
+**Diagnosis Steps:**
+- Pod logs showed panic: cannot create leader election record.
+- Checked Helm values – found wrong namespace name.
+
