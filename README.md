@@ -824,5 +824,8 @@ kubeadm certs renew all
 ### 🔹 Scenario #29: kube-scheduler Crash Due to Invalid Leader Election Config
 **Category:** Cluster Management
 
-Environment: K8s v1.24, custom scheduler deployment
+**Environment:** K8s v1.24, custom scheduler deployment
 
+**Summary:** kube-scheduler pod failed with panic due to misconfigured leader election flags.
+
+**What Happened:** An override in the Helm chart introduced an invalid leader election namespace, causing the scheduler to panic and crash on startup.
