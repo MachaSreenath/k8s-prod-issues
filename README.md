@@ -834,3 +834,9 @@ kubeadm certs renew all
 - Pod logs showed panic: cannot create leader election record.
 - Checked Helm values – found wrong namespace name.
 
+**Root Cause:** Namespace specified for leader election did not exist.
+
+**Fix/Workaround:**
+- Created the missing namespace.
+- Restarted the scheduler pod.
+
