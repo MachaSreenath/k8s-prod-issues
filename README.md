@@ -840,3 +840,11 @@ kubeadm certs renew all
 - Created the missing namespace.
 - Restarted the scheduler pod.
 
+**Lessons Learned:** Leader election is sensitive to namespace scoping.
+
+**How to Avoid:**
+- Use default kube-system unless explicitly scoped.
+- Validate all scheduler configs with CI linting.
+
+---
+
