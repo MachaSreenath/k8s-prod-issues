@@ -820,3 +820,7 @@ kubeadm certs renew all
 - Rotate certs manually before planned outages.
 
 ---
+
+### 🔹 Scenario #29: kube-scheduler Crash Due to Invalid Leader Election Config
+**Category:** Cluster Management
+
