@@ -889,3 +889,5 @@ egress:
 
 **Environment:** K8s v1.22, on-prem, kubeadm
 
+**Summary:** Authentication tokens failed across the cluster due to node clock skew.
+
