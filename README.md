@@ -884,3 +884,5 @@ egress:
 
 ---
 
+### 🔹 Scenario #31: Node Clock Drift Causing Authentication Failures
+**Category:** Cluster Management
