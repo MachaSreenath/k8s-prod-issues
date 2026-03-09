@@ -893,3 +893,8 @@ egress:
 
 **What Happened:** Token-based authentication failed for all workloads and kubectl access due to time drift between worker nodes and the API server.
 
+**Diagnosis Steps:**
+- Ran kubectl logs and found expired token errors.
+- Checked node time using date on each node – found significant drift.
+- Verified NTP daemon status – not running.
+
