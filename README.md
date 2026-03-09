@@ -856,3 +856,5 @@ kubeadm certs renew all
 
 **Summary:** DNS resolution broke after Calico CNI update due to iptables policy drop changes.
 
+**What Happened:** New version of Calico enforced stricter iptables drop policies, blocking traffic from CoreDNS to pods.
+
