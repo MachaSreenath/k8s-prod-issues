@@ -898,3 +898,5 @@ egress:
 - Checked node time using date on each node – found significant drift.
 - Verified NTP daemon status – not running.
 
+**Root Cause:** NTP daemon disabled on worker nodes.
+
