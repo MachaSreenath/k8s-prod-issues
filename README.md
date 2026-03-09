@@ -891,3 +891,5 @@ egress:
 
 **Summary:** Authentication tokens failed across the cluster due to node clock skew.
 
+**What Happened:** Token-based authentication failed for all workloads and kubectl access due to time drift between worker nodes and the API server.
+
