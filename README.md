@@ -858,3 +858,8 @@ kubeadm certs renew all
 
 **What Happened:** New version of Calico enforced stricter iptables drop policies, blocking traffic from CoreDNS to pods.
 
+**Diagnosis Steps:**
+- DNS requests timed out.
+- Packet capture showed ICMP unreachable from pods to CoreDNS.
+- Checked Calico policy and iptables rules.
+
