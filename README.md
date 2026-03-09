@@ -886,3 +886,6 @@ egress:
 
 ### 🔹 Scenario #31: Node Clock Drift Causing Authentication Failures
 **Category:** Cluster Management
+
+**Environment:** K8s v1.22, on-prem, kubeadm
+
