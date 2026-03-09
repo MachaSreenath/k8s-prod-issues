@@ -904,3 +904,11 @@ egress:
 - Re-enabled and restarted NTP on all nodes.
 - Synchronized system clocks manually.
 
+**Lessons Learned:** Time synchronization is critical for certificate and token-based auth.
+
+**How to Avoid:**
+- Ensure NTP or chrony is enabled via bootstrap configuration.
+- Monitor time drift via node-exporter.
+
+---
+
