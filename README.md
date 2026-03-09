@@ -854,3 +854,5 @@ kubeadm certs renew all
 
 **Environment:** K8s v1.23, self-hosted Calico
 
+**Summary:** DNS resolution broke after Calico CNI update due to iptables policy drop changes.
+
