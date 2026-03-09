@@ -848,3 +848,4 @@ kubeadm certs renew all
 
 ---
 
+### 🔹 Scenario #30: Cluster DNS Resolution Broken After Calico CNI Update
