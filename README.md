@@ -863,3 +863,24 @@ kubeadm certs renew all
 - Packet capture showed ICMP unreachable from pods to CoreDNS.
 - Checked Calico policy and iptables rules.
 
+**Root Cause:** Calico’s default deny policy applied to kube-dns traffic.
+
+**Fix/Workaround:**
+- Added explicit Calico policy allowing kube-dns to pod traffic.
+
+yaml:
+```
+egress:
+- action: Allow
+  destination:
+    selector: "k8s-app == 'kube-dns'"
+```
+
+**Lessons Learned:** CNI policy changes can impact DNS without warning.
+
+**How to Avoid:**
+- Review and test all network policy upgrades in staging.
+- Use canary upgrade strategy for CNI.
+
+---
+
