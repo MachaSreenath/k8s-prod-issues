@@ -900,3 +900,7 @@ egress:
 
 **Root Cause:** NTP daemon disabled on worker nodes.
 
+**Fix/Workaround:**
+- Re-enabled and restarted NTP on all nodes.
+- Synchronized system clocks manually.
+
